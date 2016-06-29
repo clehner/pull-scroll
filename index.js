@@ -101,8 +101,8 @@ module.exports = function Scroller(scroller, content, render, top, sticky, cb) {
 
       if(queue.length > 5) pause.pause()
     }, function (err) {
-      if(err) console.error(err)
-      cb ? cb(err) : console.error(err)
+      if(cb) cb(err)
+      else if(err) console.error(err)
     })
   )
 }
